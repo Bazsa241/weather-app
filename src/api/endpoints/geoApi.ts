@@ -1,7 +1,8 @@
+import type { City, CityResponse } from '@app/types';
 import { geoClient } from '../client';
 
-export const searchCity = async (name: string) => {
-  const res = await geoClient.get('/search', {
+export const searchCity = async (name: string): Promise<City[]> => {
+  const res = await geoClient.get<CityResponse>('/search', {
     params: {
       name,
       count: 10,

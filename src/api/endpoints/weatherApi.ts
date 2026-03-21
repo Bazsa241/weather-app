@@ -1,7 +1,8 @@
+import type { Weather } from '@app/types';
 import { weatherClient } from '../client';
 
-export const getWeather = async (lat: number, lon: number) => {
-  const res = await weatherClient.get('/forecast', {
+export const getWeather = async (lat: number, lon: number): Promise<Weather> => {
+  const res = await weatherClient.get<Weather>('/forecast', {
     params: {
       latitude: lat,
       longitude: lon,
