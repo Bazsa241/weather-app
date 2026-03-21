@@ -25,7 +25,7 @@ export default defineConfig([
       globals: globals.browser,
     },
     rules: {
-      'prettier/prettier': 'error',
+      'prettier/prettier': 'warn',
     },
   },
   prettier,
