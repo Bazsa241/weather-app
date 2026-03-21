@@ -3,9 +3,15 @@ import reactLogo from './assets/react.svg';
 import viteLogo from './assets/vite.svg';
 import heroImg from './assets/hero.png';
 import './App.css';
+import { useCitySearch, useWeather } from '@app/hooks';
 
 function App() {
   const [count, setCount] = useState(0);
+
+  const { data: cities } = useCitySearch('Deb');
+  const { data: weather } = useWeather(47.49, 19.0402);
+
+  console.log({ cities, weather });
 
   return (
     <>

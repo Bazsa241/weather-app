@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { handleApiError } from './handlers/errorHandler';
+import { handleApiError } from './handlers';
 
 export const geoClient = axios.create({
   baseURL: 'https://geocoding-api.open-meteo.com/v1',
