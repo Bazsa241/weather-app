@@ -1,22 +1,20 @@
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 import { useMemo, useState } from 'react';
-import { getTheme } from '@app/theme';
+import { getTheme, type ColorMode } from '@app/theme';
 import { ColorModeContext } from '@app/theme';
 
-type Mode = 'light' | 'dark';
-
 export const AppThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [mode, setMode] = useState<Mode>('light');
+  const [colorMode, setColorMode] = useState<ColorMode>('light');
 
   const toggleColorMode = () => {
-    setMode((prev) => (prev === 'light' ? 'dark' : 'light'));
+    setColorMode((prev) => (prev === 'light' ? 'dark' : 'light'));
   };
 
-  const theme = useMemo(() => getTheme(mode), [mode]);
+  const theme = useMemo(() => getTheme(colorMode), [colorMode]);
 
   return (
-    <ColorModeContext.Provider value={{ toggleColorMode }}>
+    <ColorModeContext.Provider value={{ colorMode, toggleColorMode }}>
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
         {children}

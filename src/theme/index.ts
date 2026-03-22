@@ -1,2 +1,3 @@
 export { getTheme } from './theme';
-export { ColorModeContext, type ColorModeContextType } from './ColorModeContext';
+export { ColorModeContext } from './ColorModeContext';
+export type { ColorMode, ColorModeContextType } from './ColorModeContext';
