@@ -6,17 +6,21 @@ import { useTranslation } from 'react-i18next';
 type CurrentWeatherProps = {
   city: string;
   currentWeather: CurrentWeatherType;
-  units: CurrentWeatherUnits;
+  currentWeatherUnits: CurrentWeatherUnits;
 };
 
-export const CurrentWeather = ({ city, currentWeather, units }: CurrentWeatherProps) => {
+export const CurrentWeather = ({
+  city,
+  currentWeather,
+  currentWeatherUnits,
+}: CurrentWeatherProps) => {
   const { t } = useTranslation();
 
   return (
     <GlassCard className="w-min">
       <Typography variant="body2">{city}</Typography>
       <Typography variant="h2" className="text-nowrap">
-        {currentWeather.temperature} {units.temperature}
+        {currentWeather.temperature} {currentWeatherUnits.temperature}
       </Typography>
       <Typography variant="body1">
         {t(`weatherCode:${currentWeather.weathercode}`, t('common:unknown'))}
