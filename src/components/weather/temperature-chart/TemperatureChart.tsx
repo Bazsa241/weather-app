@@ -1,5 +1,5 @@
 import { LineChart, Line, Tooltip, ResponsiveContainer, CartesianGrid, XAxis } from 'recharts';
-import { Box, useTheme } from '@mui/material';
+import { useTheme } from '@mui/material';
 import type { DailyWeather } from '@app/types';
 import { GlassCard } from '@app/components/ui';
 import { useGetDayName } from '@app/hooks';
@@ -29,50 +29,48 @@ export const TemperatureChart = ({ dailyWeather }: TemperatureChartProps) => {
 
   return (
     <GlassCard>
-      <Box className="h-72 w-full">
-        <ResponsiveContainer>
-          <LineChart data={data} margin={{ top: 10, right: 10, left: 20, bottom: 0 }}>
-            <XAxis
-              dataKey="day"
-              tickFormatter={(tick) => getDayName(tick, true)}
-              axisLine={false}
-              tickLine={false}
-              tick={{
-                fill: theme.palette.text.secondary,
-              }}
-            />
+      <ResponsiveContainer height={300}>
+        <LineChart data={data} margin={{ top: 10, right: 10, left: 20, bottom: 0 }}>
+          <XAxis
+            dataKey="day"
+            tickFormatter={(tick) => getDayName(tick, true)}
+            axisLine={false}
+            tickLine={false}
+            tick={{
+              fill: theme.palette.text.secondary,
+            }}
+          />
 
-            <Tooltip
-              contentStyle={{
-                background: theme.palette.background.paper,
-                border: 'none',
-                borderRadius: 12,
-              }}
-              content={TooltipContent}
-              formatter={(value, name) => [`${value} °C`, name]}
-              labelFormatter={(value) => getDayName(value)}
-            />
+          <Tooltip
+            contentStyle={{
+              background: theme.palette.background.paper,
+              border: 'none',
+              borderRadius: 12,
+            }}
+            content={TooltipContent}
+            formatter={(value, name) => [`${value} °C`, name]}
+            labelFormatter={(value) => getDayName(value)}
+          />
 
-            <CartesianGrid vertical={false} stroke={theme.palette.divider} strokeDasharray="5 5" />
+          <CartesianGrid vertical={false} stroke={theme.palette.divider} strokeDasharray="5 5" />
 
-            <Line
-              type="monotone"
-              dataKey="max"
-              stroke={theme.palette.warning.main}
-              strokeWidth={2}
-              dot={false}
-            />
+          <Line
+            type="monotone"
+            dataKey="max"
+            stroke={theme.palette.warning.main}
+            strokeWidth={2}
+            dot={false}
+          />
 
-            <Line
-              type="monotone"
-              dataKey="min"
-              stroke={theme.palette.primary.main}
-              strokeWidth={2}
-              dot={false}
-            />
-          </LineChart>
-        </ResponsiveContainer>
-      </Box>
+          <Line
+            type="monotone"
+            dataKey="min"
+            stroke={theme.palette.primary.main}
+            strokeWidth={2}
+            dot={false}
+          />
+        </LineChart>
+      </ResponsiveContainer>
     </GlassCard>
   );
 };
