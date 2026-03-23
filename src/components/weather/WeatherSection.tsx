@@ -1,8 +1,8 @@
 import { Box } from '@mui/material';
-import { CurrentWeather } from './CurrentWeather';
 import { useWeather } from '@app/hooks';
-import { WeeklyForecast } from './WeeklyForecast';
-import { TemperatureChart } from './TemperatureChart';
+import { CurrentWeather } from './current-weather';
+import { WeeklyForecast } from './weekly-forecast';
+import { TemperatureChart } from './temperature-chart';
 
 export const WeatherSection = () => {
   const lat = 47.5316; // Debrecen

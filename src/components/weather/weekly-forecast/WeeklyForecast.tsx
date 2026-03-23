@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material';
 import { GlassCard } from '@app/components/ui';
 import type { DailyWeather, DailyWeatherUnits } from '@app/types';
 import { useGetDayName } from '@app/hooks';
-import { WeatherIcon } from './WeatherIcon';
+import { WeatherIcon } from '@app/components/weather/weather-icon';
 
 type WeeklyForecastProps = {
   dailyWeather: DailyWeather;
