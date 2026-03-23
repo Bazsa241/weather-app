@@ -2,6 +2,7 @@ import { Box } from '@mui/material';
 import { CurrentWeather } from './CurrentWeather';
 import { useWeather } from '@app/hooks';
 import { WeeklyForecast } from './WeeklyForecast';
+import { TemperatureChart } from './TemperatureChart';
 
 export const WeatherSection = () => {
   const lat = 47.5316; // Debrecen
@@ -22,6 +23,7 @@ export const WeatherSection = () => {
         currentWeatherUnits={weather.current_weather_units}
       />
       <WeeklyForecast dailyWeather={weather.daily} dailyWeatherUnits={weather.daily_units} />
+      <TemperatureChart dailyWeather={weather.daily} />
     </Box>
   );
 };

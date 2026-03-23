@@ -1,10 +1,21 @@
 {
-  "0": "Vasárnap",
-  "1": "Hétfő",
-  "2": "Kedd",
-  "3": "Szerda",
-  "4": "Csütörtök",
-  "5": "Péntek",
-  "6": "Szombat",
+  "long": {
+    "0": "Vasárnap",
+    "1": "Hétfő",
+    "2": "Kedd",
+    "3": "Szerda",
+    "4": "Csütörtök",
+    "5": "Péntek",
+    "6": "Szombat"
+  },
+  "short": {
+    "0": "Vas",
+    "1": "Hé",
+    "2": "Ke",
+    "3": "Sze",
+    "4": "Csüt",
+    "5": "Pé",
+    "6": "Szo"
+  },
   "today": "Ma"
 }

@@ -9,10 +9,10 @@ import { WiSnowflakeCold } from 'react-icons/wi';
 
 type WeatherIconProps = {
   code: number;
-  size: number;
+  size?: number;
 };
 
-const group = (codes: number[], icon: FC<{ size: number }>) =>
+const group = (codes: number[], icon: FC<{ size?: number }>) =>
   Object.fromEntries(codes.map((c) => [c, icon]));
 
 const iconMap = {
