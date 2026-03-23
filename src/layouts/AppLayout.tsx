@@ -1,6 +1,7 @@
 import { Header } from '@app/components';
 import { useContext } from 'react';
 import { ColorModeContext } from '@app/theme';
+import { Footer } from '@app/components/footer';
 
 export const AppLayout = ({ children }: { children: React.ReactNode }) => {
   const { colorMode } = useContext(ColorModeContext);
@@ -14,9 +15,10 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
       }`}
     >
       <Header />
-      <main className="flex-1 overflow-y-auto p-4">
+      <main className="overflow-y-auto p-4">
         <div className="max-w-5xl mx-auto flex flex-col gap-6">{children}</div>
       </main>
+      <Footer />
     </div>
   );
 };

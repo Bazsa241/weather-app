@@ -9,7 +9,6 @@ export const WeatherSection = () => {
   const lon = 21.6273;
 
   const { data: weather, isLoading } = useWeather(lat, lon);
-  console.log(weather);
 
   if (isLoading || !weather) {
     return null;
