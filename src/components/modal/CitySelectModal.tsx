@@ -74,7 +74,7 @@ export const CitySelectModal = () => {
           className="mt-2"
           options={data}
           loading={isLoading}
-          getOptionLabel={(option) => option.name}
+          getOptionLabel={(option) => `${option.name} - ${option.country}`}
           onInputChange={(_, value) => setInput(value)}
           onChange={handleChange}
           noOptionsText={t('noOptions')}

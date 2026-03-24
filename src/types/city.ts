@@ -3,7 +3,7 @@ export type City = {
   name: string;
   latitude: number;
   longitude: number;
-  country_code: string;
+  country: string;
 };
 
 export type CityResponse = {
