@@ -1,5 +1,9 @@
 {
   "en": "Angol",
   "hu": "Magyar",
-  "unknown": "Ismeretlen"
+  "unknown": "Ismeretlen",
+  "searchCity": "Város keresése",
+  "city": "Város",
+  "close": "Bezárás",
+  "noOptions": "Nincs találat"
 }

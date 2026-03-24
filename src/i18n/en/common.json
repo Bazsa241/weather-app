@@ -1,5 +1,9 @@
 {
   "en": "English",
   "hu": "Hungarian",
-  "unknown": "Unknown"
+  "unknown": "Unknown",
+  "searchCity": "Search city",
+  "city": "City",
+  "close": "Close",
+  "noOptions": "No results found"
 }
