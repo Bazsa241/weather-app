@@ -19,12 +19,20 @@ export const CitySelectModal = () => {
   const { setInput, city, closeModal, data, handleChange, isLoading, isModalOpen } =
     useCitySelectModal();
 
+  const handleDialogClose = () => {
+    if (!city) {
+      return;
+    }
+
+    closeModal();
+  };
+
   return (
     <Dialog
       open={isModalOpen}
       fullWidth
       maxWidth="sm"
-      onClose={closeModal}
+      onClose={handleDialogClose}
       slotProps={{
         paper: { sx: modalGlassStyles },
         backdrop: {
