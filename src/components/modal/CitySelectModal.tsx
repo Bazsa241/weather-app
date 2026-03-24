@@ -1,8 +1,5 @@
 import cn from 'classnames';
-import { useCitySearch } from '@app/hooks';
-import { useDebounce } from '@app/hooks';
-import { useCity, useCloseModal, useIsModalOpen, useSetCity } from '@app/store';
-import type { City } from '@app/types';
+import { useCitySelectModal } from '@app/hooks';
 import {
   Dialog,
   DialogTitle,
@@ -13,39 +10,21 @@ import {
   IconButton,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { glassStyles, modalGlassStyles } from '@app/theme';
 
 export const CitySelectModal = () => {
-  const [input, setInput] = useState('');
-
   const { t } = useTranslation('common');
 
-  const setCity = useSetCity();
-  const city = useCity();
-
-  const isModalOpen = useIsModalOpen();
-  const closeModal = useCloseModal();
-
-  const debounced = useDebounce(input);
-
-  const { data = [], isLoading } = useCitySearch(debounced);
-
-  const handleChange = (_: React.SyntheticEvent, value: City | null) => {
-    if (!value) {
-      return;
-    }
-
-    setCity(value);
-    closeModal();
-  };
+  const { setInput, city, closeModal, data, handleChange, isLoading, isModalOpen } =
+    useCitySelectModal();
 
   return (
     <Dialog
       open={isModalOpen}
       fullWidth
       maxWidth="sm"
+      onClose={closeModal}
       slotProps={{
         paper: { sx: modalGlassStyles },
         backdrop: {

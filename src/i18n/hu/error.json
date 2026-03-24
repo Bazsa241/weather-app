@@ -1,0 +1,7 @@
+{
+  "unknown": "Ismeretlen hiba történt",
+  "noNetwork": "Nincs internetkapcsolat",
+  "serverError": "Szerverhiba, próbáld újra később",
+  "cityNotFound": "A város nem található",
+  "invalidRequest": "Érvénytelen kérés"
+}

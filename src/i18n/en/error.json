@@ -1,0 +1,7 @@
+{
+  "unknown": "Unknown error occurred",
+  "noNetwork": "No internet connection",
+  "serverError": "Server error, please try again later",
+  "cityNotFound": "City not found",
+  "invalidRequest": "Invalid request"
+}

@@ -9,5 +9,5 @@ export const searchCity = async (name: string): Promise<City[]> => {
     },
   });
 
-  return res.data.results;
+  return res.data.results ?? [];
 };
