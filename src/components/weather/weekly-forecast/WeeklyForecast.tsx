@@ -31,7 +31,7 @@ export const WeeklyForecast = ({ dailyWeather, dailyWeatherUnits }: WeeklyForeca
               {dailyWeather.temperature_2m_min[i]} {dailyWeatherUnits.temperature_2m_min}
             </Typography>
             <Typography>/</Typography>
-            <Typography className="text-start w-16 text-nowrap">
+            <Typography className="text-start w-16 text-nowrap" fontWeight="bold">
               {dailyWeather.temperature_2m_max[i]} {dailyWeatherUnits.temperature_2m_max}
             </Typography>
           </Box>

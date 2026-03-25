@@ -21,7 +21,7 @@ export const TemperatureChart = ({ dailyWeather }: TemperatureChartProps) => {
   const getDayName = useGetDayName();
 
   const data: ChartData[] = dailyWeather.time.map((date, i) => ({
-    day: date,
+    day: i === 0 ? 'today' : date,
     min: dailyWeather.temperature_2m_min[i],
     max: dailyWeather.temperature_2m_max[i],
     weatherCode: dailyWeather.weathercode[i],
@@ -48,8 +48,6 @@ export const TemperatureChart = ({ dailyWeather }: TemperatureChartProps) => {
               borderRadius: 12,
             }}
             content={TooltipContent}
-            formatter={(value, name) => [`${value} °C`, name]}
-            labelFormatter={(value) => getDayName(value)}
           />
 
           <CartesianGrid vertical={false} stroke={theme.palette.divider} strokeDasharray="5 5" />
