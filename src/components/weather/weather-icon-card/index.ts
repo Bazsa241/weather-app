@@ -1,0 +1,1 @@
+export { WeatherIconCard } from './WeatherIconCard';

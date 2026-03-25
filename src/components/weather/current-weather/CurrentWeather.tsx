@@ -19,10 +19,10 @@ export const CurrentWeather = ({
   const { t } = useTranslation();
 
   return (
-    <ButtonBase onClick={onClick} className="self-start rounded-xl!">
+    <ButtonBase onClick={onClick} className="rounded-xl!">
       <GlassCard className="flex flex-col items-start">
         <Typography variant="body2">{city}</Typography>
-        <Typography variant="h2" className="text-nowrap">
+        <Typography variant="h3" className="text-nowrap">
           {currentWeather.temperature} {currentWeatherUnits.temperature}
         </Typography>
         <Typography variant="body1">
