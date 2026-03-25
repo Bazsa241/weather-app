@@ -18,9 +18,9 @@ export const WeeklyForecast = ({ dailyWeather, dailyWeatherUnits }: WeeklyForeca
         <Box key={date} className="grid grid-cols-3 items-center justify-center">
           <Typography>{i === 0 ? getDayName('today') : getDayName(date)}</Typography>
 
-          <Box className="flex items-center justify-self-start gap-1 sm:gap-3 sm:justify-self-center">
+          <Box className="flex items-center gap-1 justify-between sm:gap-3 justify-self-start sm:justify-self-center">
             <WeatherIcon code={dailyWeather.weathercode[i]} size={32} />
-            <Typography color="text.secondary" className="text-center">
+            <Typography color="text.secondary">
               {dailyWeather.precipitation_probability_max[i]}
               {dailyWeatherUnits.precipitation_probability_max}
             </Typography>

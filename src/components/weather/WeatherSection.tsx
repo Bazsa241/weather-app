@@ -14,15 +14,19 @@ export const WeatherSection = () => {
   }
 
   return (
-    <Box className="flex flex-col gap-6">
-      <CurrentWeather
-        city={city.name}
-        currentWeather={weather.current_weather}
-        currentWeatherUnits={weather.current_weather_units}
-        onClick={openModal}
-      />
-      <WeeklyForecast dailyWeather={weather.daily} dailyWeatherUnits={weather.daily_units} />
-      <TemperatureChart dailyWeather={weather.daily} />
+    <Box className="grid lg:grid-cols-3 gap-8">
+      <Box>
+        <CurrentWeather
+          city={city.name}
+          currentWeather={weather.current_weather}
+          currentWeatherUnits={weather.current_weather_units}
+          onClick={openModal}
+        />
+      </Box>
+      <Box className="grid gap-8 col-span-2">
+        <WeeklyForecast dailyWeather={weather.daily} dailyWeatherUnits={weather.daily_units} />
+        <TemperatureChart dailyWeather={weather.daily} />
+      </Box>
     </Box>
   );
 };
