@@ -1,11 +1,11 @@
-import { ColorModeContext } from '@app/theme';
+import { useColorMode, useToggleColorMode } from '@app/store';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import { IconButton } from '@mui/material';
-import { useContext } from 'react';
 
 export const ThemeSwitcher = () => {
-  const { colorMode, toggleColorMode } = useContext(ColorModeContext);
+  const colorMode = useColorMode();
+  const toggleColorMode = useToggleColorMode();
 
   return (
     <IconButton onClick={toggleColorMode}>

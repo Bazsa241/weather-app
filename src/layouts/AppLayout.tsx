@@ -1,10 +1,9 @@
 import { Header } from '@app/components';
-import { useContext } from 'react';
-import { ColorModeContext } from '@app/theme';
 import { Footer } from '@app/components/footer';
+import { useColorMode } from '@app/store';
 
 export const AppLayout = ({ children }: { children: React.ReactNode }) => {
-  const { colorMode } = useContext(ColorModeContext);
+  const colorMode = useColorMode();
 
   return (
     <div
