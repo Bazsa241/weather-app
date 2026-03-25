@@ -1,17 +1,18 @@
 import { Button, Typography } from '@mui/material';
 import LanguageIcon from '@mui/icons-material/Language';
-import { useTranslation } from 'react-i18next';
+import { useLanguage, useSetLanguage } from '@app/store';
 
 export const LanguageSwitcher = () => {
-  const { i18n } = useTranslation();
-  const handleLanguageChange = () => {
-    const nextLang = i18n.language === 'hu' ? 'en' : 'hu';
-    i18n.changeLanguage(nextLang);
+  const language = useLanguage();
+  const setLanguage = useSetLanguage();
+
+  const handleLanguageSwitch = () => {
+    setLanguage(language === 'hu' ? 'en' : 'hu');
   };
 
   return (
-    <Button color="inherit" onClick={handleLanguageChange} endIcon={<LanguageIcon />}>
-      <Typography>{i18n.language.toUpperCase()}</Typography>
+    <Button color="inherit" onClick={handleLanguageSwitch} endIcon={<LanguageIcon />}>
+      <Typography>{language.toUpperCase()}</Typography>
     </Button>
   );
 };
