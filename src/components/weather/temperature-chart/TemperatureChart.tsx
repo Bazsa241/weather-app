@@ -36,6 +36,7 @@ export const TemperatureChart = ({ dailyWeather }: TemperatureChartProps) => {
             tickFormatter={(tick) => getDayName(tick, true)}
             axisLine={false}
             tickLine={false}
+            padding={{ left: 10, right: 10 }}
             tick={{
               fill: theme.palette.text.secondary,
             }}
