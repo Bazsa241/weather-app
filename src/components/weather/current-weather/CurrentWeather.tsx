@@ -20,7 +20,7 @@ export const CurrentWeather = ({
 
   return (
     <ButtonBase onClick={onClick} className="rounded-xl!">
-      <GlassCard className="flex flex-col items-start">
+      <GlassCard className="flex flex-col items-start min-w-45">
         <Typography variant="body2">{city}</Typography>
         <Typography variant="h3" className="text-nowrap">
           {currentWeather.temperature} {currentWeatherUnits.temperature}
