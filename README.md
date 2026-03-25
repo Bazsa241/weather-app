@@ -1,73 +1,78 @@
-# React + TypeScript + Vite
+# React Weather Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React application built with TypeScript, Vite, and various libraries for UI, state management, and data visualization.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Node.js**: v18 LTS or higher
+- **pnpm**: `corepack enable pnpm`
 
-## React Compiler
+## Description
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+A modern web application built with React and TypeScript, styled with Material UI and Tailwind, utilizing React Query for data fetching, and incorporating various visualization libraries like Recharts and React Simple Maps.
 
-## Expanding the ESLint configuration
+## Scripts
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Install dependencies:**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+  ```
+  pnpm install
+  ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Run development server:**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+  ```
+  pnpm run dev
+  ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Build the project:**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+  ```
+  pnpm run build
+  ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+- **Lint the code:**
+
+  ```
+  pnpm run lint
+  ```
+
+- **Type-check the project:**
+
+  ```
+  pnpm run type-check
+  ```
+
+- **Format code with Prettier:**
+
+  ```
+  pnpm run format
+  ```
+
+- **Preview the production build:**
+
+  ```
+  pnpm run preview
+  ```
+
+## Main Dependencies
+
+- React
+- React DOM
+- TypeScript
+- Vite
+- Material UI (`@mui/material`, `@mui/icons-material`)
+- React Query (`@tanstack/react-query`)
+- Axios
+- Recharts
+- React Simple Maps
+- Zustand
+- i18next and React i18next for internationalization
+
+## Development Dependencies
+
+- ESLint and related plugins for linting
+- Prettier for code formatting
+- Tailwind CSS
+- TypeScript ESLint plugins
+- Vite React plugin
